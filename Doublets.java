@@ -229,17 +229,16 @@ public class Doublets implements WordLadderGame {
     *                       false otherwise
     */
 	public boolean isWordLadder(List<String> sequence) {
-		if (sequence == null || sequence.isEmpty()) {
-			return false;
-		}
-		if (sequence.size() == 1) {
-			return true;
-		}
-		int count = 0;
-		for (int i = 0; i < sequence.size() - 1; i++) {
-            if (isWord(sequence.get(i)) != true 
-                || isWord(sequence.get(i + 1)) != true) {
-				    return false;
+        if (sequence == null || sequence.isEmpty()) {
+            return false;
+        }
+        if (sequence.size() == 1) {
+            return true;
+        }
+        int count = 0;
+        for (int i = 0; i < sequence.size() - 1; i++) {
+            if (isWord(sequence.get(i)) != true || isWord(sequence.get(i + 1)) != true) {
+                return false;
             }
             if (sequence.get(i) == sequence.get(i + 1)) {
                 return false;
