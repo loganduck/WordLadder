@@ -237,21 +237,22 @@ public class Doublets implements WordLadderGame {
 		}
 		int count = 0;
 		for (int i = 0; i < sequence.size() - 1; i++) {
-			if (isWord(sequence.get(i)) != true || isWord(sequence.get(i + 1)) != true) {
-				return false;
-			}
+            if (isWord(sequence.get(i)) != true 
+                || isWord(sequence.get(i + 1)) != true) {
+				    return false;
+            }
             if (sequence.get(i) == sequence.get(i + 1)) {
                 return false;
             }
             if (getHammingDistance(sequence.get(i), sequence.get(i + 1)) > 1) {
                 count = getHammingDistance(sequence.get(i), sequence.get(i + 1));
             }
-			if (count > 1) {
-				return false;
-			}
-		} 
-		return true;
-	}
+            if (count > 1) {
+                return false;
+            }
+        }
+        return true;
+    }
 
     private class Node {
       String position;
