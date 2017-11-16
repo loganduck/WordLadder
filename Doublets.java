@@ -135,7 +135,7 @@ public class Doublets implements WordLadderGame {
     * list.
     *
     * Breadth-first search must be used in all implementing classes.
-     *
+    *
     * @param  start  the starting word
     * @param  end    the ending word
     * @return        a minimum length word ladder from start to end
@@ -175,9 +175,9 @@ public class Doublets implements WordLadderGame {
          }
       }
       return empty;
-	}
+  }
 
-	/**
+    /**
     * Returns all the words that have a Hamming distance of one relative to the
     * given word.
     *
@@ -185,20 +185,20 @@ public class Doublets implements WordLadderGame {
     * @return      the neighbors of the given word
     */	
 	public List<String> getNeighbors(String word) {
-		List<String> neighbors = new ArrayList<String>();
-		List<String> empty = new ArrayList<String>();
-		if (word == null) {
-			return empty;
-		}
-		for (String value : lexicon) {
-			if (getHammingDistance(word, value) == 1) {
-				neighbors.add(value);
-			}
-		}
-		return neighbors;
-	}
+        List<String> neighbors = new ArrayList<String>();
+        List<String> empty = new ArrayList<String>();
+        if (word == null) {
+            return empty;
+        }
+        for (String value : lexicon) {
+            if (getHammingDistance(word, value) == 1) {
+                neighbors.add(value);
+            }
+        }
+        return neighbors;
+    }
 
-	/**
+    /**
     * Returns the total number of words in the current lexicon.
     *
     * @return number of words in the lexicon
@@ -207,7 +207,7 @@ public class Doublets implements WordLadderGame {
 		return lexicon.size();
 	}
 
-	/**
+    /**
     * Checks to see if the given string is a word.
     *
     * @param  str the string to check
@@ -221,7 +221,7 @@ public class Doublets implements WordLadderGame {
 		}
 	}
 
-	/**
+    /**
     * Checks to see if the given sequence of strings is a valid word ladder.
     *
     * @param  sequence the given sequence of strings
@@ -243,9 +243,9 @@ public class Doublets implements WordLadderGame {
             if (sequence.get(i) == sequence.get(i + 1)) {
                 return false;
             }
-			if (getHammingDistance(sequence.get(i), sequence.get(i + 1)) > 1) {
+            if (getHammingDistance(sequence.get(i), sequence.get(i + 1)) > 1) {
                 count = getHammingDistance(sequence.get(i), sequence.get(i + 1));
-			}
+            }
 			if (count > 1) {
 				return false;
 			}
